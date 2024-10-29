@@ -8,6 +8,12 @@ import { RouterLink, RouterView } from 'vue-router'
   </header>
 
   <RouterView />
+
+  <footer>
+    <p>
+      Made with ❤️ by <a href="https://www.instagram.com/ink.c.tatts/" target="_blank">@ink.c.tatts</a>
+    </p>
+  </footer>
 </template>
 
 <style scoped>
@@ -16,4 +22,11 @@ import { RouterLink, RouterView } from 'vue-router'
     display: block;
     height: 168px;
   }
+  footer {
+    margin-top: 2rem;
+    text-align: center;
+  }
+    a {
+      color: rgb(32, 86, 216);
+    }
 </style>
