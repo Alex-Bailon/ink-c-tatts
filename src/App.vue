@@ -14,5 +14,6 @@ import { RouterLink, RouterView } from 'vue-router'
   .logo {
     margin: 2rem auto;
     display: block;
+    height: 168px;
   }
 </style>

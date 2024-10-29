@@ -31,6 +31,6 @@ li {
 }
 p {
   margin-top: 2rem;
-  padding-left: 40px;
+  text-align: center;
 }
 </style>
