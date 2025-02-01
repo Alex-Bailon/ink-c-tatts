@@ -83,13 +83,15 @@
   <section class="container mx-auto px-4 py-16">
     <div class="flex flex-col md:flex-row gap-8">
       <div class="md:w-1/3">
-        <img 
-          src="" 
-          alt="Tattoo Artist" 
-          class="w-full h-auto rounded-lg shadow-lg object-cover"
-        />
+        <div class="aspect-[3/4]">
+          <img 
+            src="/tattoo-artist.webp" 
+            alt="Tattoo Artist" 
+            class="w-full h-full rounded-lg shadow-lg object-cover object-top"
+          />
+        </div>
       </div>
-      <div class="md:w-2/3">
+      <div class="md:w-2/3 flex flex-col justify-center">
         <h2 class="text-3xl font-bold mb-6 text-gray-100">Meet Your Artist</h2>
         <div class="prose prose-invert">
           <p class="text-gray-300 mb-4">
