@@ -58,8 +58,8 @@ const handleSubmit = async () => {
         <h2 class="text-2xl font-semibold text-gray-100 mb-6">Get in Touch</h2>
         
         <div class="space-y-6">
-          <div class="flex items-start space-x-4">
-            <div class="text-blue-400">
+          <div class="flex items-center space-x-4">
+            <div class="text-blue-400 flex-shrink-0">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -67,35 +67,43 @@ const handleSubmit = async () => {
             </div>
             <div>
               <h3 class="text-gray-100 font-medium">Location</h3>
-              <p class="text-gray-300 mt-1">Somewhere, FL</p>
+              <p class="text-gray-300 mt-1">Schaumburg, IL</p>
             </div>
           </div>
 
-          <div class="flex items-start space-x-4">
-            <div class="text-blue-400">
+          <!-- Email -->
+          <div class="flex items-center space-x-4">
+            <div class="text-blue-400 flex-shrink-0">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
             <div>
               <h3 class="text-gray-100 font-medium">Email</h3>
-              <a href="mailto:contact@example.com" class="text-gray-300 mt-1 hover:text-blue-400 transition-colors">
-                contact@example.com
+              <a 
+                href="mailto:citlalli.tattoo@gmail.com" 
+                class="text-gray-300 mt-1 hover:text-blue-400 transition-colors inline-block"
+              >
+                ink.c.tatts@gmail.com
               </a>
             </div>
           </div>
 
-          <div class="flex items-start space-x-4">
-            <div class="text-blue-400">
+          <!-- Social -->
+          <div class="flex items-center space-x-4">
+            <div class="text-blue-400 flex-shrink-0">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <rect width="20" height="20" x="2" y="2" rx="5" stroke-width="2" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
               </svg>
             </div>
             <div>
-              <h3 class="text-gray-100 font-medium">Social Media</h3>
+              <h3 class="text-gray-100 font-medium">Social</h3>
               <a 
-                href="https://www.instagram.com/ink.c.tatts/" 
+                href="https://www.instagram.com/citlalli.tattoo" 
                 target="_blank"
+                rel="noopener noreferrer"
                 class="text-gray-300 mt-1 hover:text-blue-400 transition-colors inline-block"
               >
                 @ink.c.tatts
