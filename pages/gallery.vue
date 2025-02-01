@@ -5,43 +5,43 @@ const galleryImages = ref([
   // Example structure (commented out for now)
   {
     url: '/gallery/gallery-img-01.webp',
-    title: 'Custom Owl Design',
-    description: 'Black and grey realism'
+    title: 'Custom Snorlax Design',
+    description: 'Line and dot work'
   },
   {
     url: '/gallery/gallery-img-02.webp',
-    title: 'Custom Owl Design',
-    description: 'Black and grey realism'
+    title: 'Custom Masked Cat Design',
+    description: 'Black and grey line work'
   },
   {
     url: '/gallery/gallery-img-03.webp',
-    title: 'Custom Owl Design',
-    description: 'Black and grey realism'
+    title: 'Naive/ Folk- art Inspired Design',
+    description: 'Black line work'
   },
   {
     url: '/gallery/gallery-img-04.webp',
-    title: 'Custom Owl Design',
-    description: 'Black and grey realism'
+    title: 'Custom Hot Chicken Wing Design',
+    description: 'Etching and line work'
   },
   {
     url: '/gallery/gallery-img-05.webp',
-    title: 'Custom Owl Design',
-    description: 'Black and grey realism'
+    title: 'Custom Luna (dog) Design',
+    description: 'Abstract Line work'
   },
   {
     url: '/gallery/gallery-img-06.webp',
-    title: 'Custom Owl Design',
-    description: 'Black and grey realism'
+    title: 'Custom Gemini Ghost Design',
+    description: 'Black Line work'
   },
   {
     url: '/gallery/gallery-img-07.webp',
-    title: 'Custom Owl Design',
-    description: 'Black and grey realism'
+    title: 'Custom Butterfly Design',
+    description: 'Black Line work'
   },
   {
     url: '/gallery/gallery-img-08.webp',
-    title: 'Custom Owl Design',
-    description: 'Black and grey realism'
+    title: 'Etched Inspired Design',
+    description: 'Etching and Line work'
   },  
 ])
 
