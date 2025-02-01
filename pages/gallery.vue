@@ -3,11 +3,46 @@
 // Each image object contains url, title, and description
 const galleryImages = ref([
   // Example structure (commented out for now)
-  // {
-  //   url: '/hero.jpg',
-  //   title: 'Custom Owl Design',
-  //   description: 'Black and grey realism'
-  // }
+  {
+    url: '/gallery/gallery-img-01.webp',
+    title: 'Custom Owl Design',
+    description: 'Black and grey realism'
+  },
+  {
+    url: '/gallery/gallery-img-02.webp',
+    title: 'Custom Owl Design',
+    description: 'Black and grey realism'
+  },
+  {
+    url: '/gallery/gallery-img-03.webp',
+    title: 'Custom Owl Design',
+    description: 'Black and grey realism'
+  },
+  {
+    url: '/gallery/gallery-img-04.webp',
+    title: 'Custom Owl Design',
+    description: 'Black and grey realism'
+  },
+  {
+    url: '/gallery/gallery-img-05.webp',
+    title: 'Custom Owl Design',
+    description: 'Black and grey realism'
+  },
+  {
+    url: '/gallery/gallery-img-06.webp',
+    title: 'Custom Owl Design',
+    description: 'Black and grey realism'
+  },
+  {
+    url: '/gallery/gallery-img-07.webp',
+    title: 'Custom Owl Design',
+    description: 'Black and grey realism'
+  },
+  {
+    url: '/gallery/gallery-img-08.webp',
+    title: 'Custom Owl Design',
+    description: 'Black and grey realism'
+  },  
 ])
 
 // State for modal/lightbox
@@ -41,7 +76,7 @@ const closeModal = () => {
          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <div v-for="(image, index) in galleryImages" 
            :key="index"
-           class="group relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
+           class="group relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] aspect-square"
            @click="openModal(image)">
         <img :src="image.url" 
              :alt="image.title"
