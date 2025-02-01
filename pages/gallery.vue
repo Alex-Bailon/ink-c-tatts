@@ -115,15 +115,19 @@ const closeModal = () => {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <img 
-          v-if="selectedImage"
-          :src="selectedImage.url" 
-          :alt="selectedImage.title"
-          class="w-full h-auto rounded-lg shadow-2xl"
-        />
-        <div class="mt-4 text-white">
-          <h3 class="text-xl font-semibold">{{ selectedImage?.title }}</h3>
-          <p class="text-gray-300">{{ selectedImage?.description }}</p>
+        
+        <div class="relative">
+          <img 
+            v-if="selectedImage"
+            :src="selectedImage.url" 
+            :alt="selectedImage.title"
+            class="w-full max-h-[75vh] object-contain rounded-lg shadow-2xl"
+          />
+          
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 backdrop-blur-sm p-4 rounded-b-lg text-center">
+            <h3 class="text-xl font-semibold text-white">{{ selectedImage?.title }}</h3>
+            <p class="text-gray-300">{{ selectedImage?.description }}</p>
+          </div>
         </div>
       </div>
     </div>
