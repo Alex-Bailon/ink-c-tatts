@@ -51,11 +51,11 @@
         <!-- Optional: Quick Stats or Highlights -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 text-center">
           <div class="bg-black bg-opacity-50 p-4 rounded-lg">
-            <div class="text-white text-2xl font-bold">5+</div>
+            <div class="text-white text-2xl font-bold">2+</div>
             <div class="text-gray-300 text-sm">Years Experience</div>
           </div>
           <div class="bg-black bg-opacity-50 p-4 rounded-lg">
-            <div class="text-white text-2xl font-bold">500+</div>
+            <div class="text-white text-2xl font-bold">50+</div>
             <div class="text-gray-300 text-sm">Happy Clients</div>
           </div>
           <div class="hidden sm:block bg-black bg-opacity-50 p-4 rounded-lg">

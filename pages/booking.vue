@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useFirebase } from '@/composables/useFirebase'
 
 const bookingForm = ref({
   name: '',
@@ -15,29 +16,42 @@ const bookingForm = ref({
 
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
+const showError = ref(false)
+const { submitForm } = useFirebase()
 
 const handleSubmit = async () => {
   isSubmitting.value = true
-  // TODO: Implement form submission logic
-  await new Promise(resolve => setTimeout(resolve, 1000)) // Simulated delay
-  showSuccess.value = true
-  isSubmitting.value = false
+  showError.value = false
   
-  // Reset form after 3 seconds
-  setTimeout(() => {
-    bookingForm.value = {
-      name: '',
-      email: '',
-      phone: '',
-      tattooType: '',
-      size: '',
-      placement: '',
-      description: '',
-      preferredDate: '',
-      additionalInfo: ''
+  try {
+    const result = await submitForm(bookingForm.value, 'bookings')
+    
+    if (result.success) {
+      showSuccess.value = true
+      // Reset form after success
+      setTimeout(() => {
+        bookingForm.value = {
+          name: '',
+          email: '',
+          phone: '',
+          tattooType: '',
+          size: '',
+          placement: '',
+          description: '',
+          preferredDate: '',
+          additionalInfo: ''
+        }
+        showSuccess.value = false
+      }, 3000)
+    } else {
+      showError.value = true
     }
-    showSuccess.value = false
-  }, 3000)
+  } catch (error) {
+    console.error('Error submitting form:', error)
+    showError.value = true
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -224,6 +238,14 @@ const handleSubmit = async () => {
             class="mt-4 p-4 bg-green-800 text-green-100 rounded-md"
           >
             Booking request sent successfully! We'll contact you within 48 hours to discuss your tattoo.
+          </div>
+
+          <!-- Error Message -->
+          <div 
+            v-if="showError"
+            class="mt-4 p-4 bg-red-800 text-red-100 rounded-md"
+          >
+            There was an error submitting your request. Please try again or contact us directly.
           </div>
         </form>
       </div>

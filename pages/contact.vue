@@ -8,24 +8,37 @@ const form = ref({
 
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
+const showError = ref(false)
+const { submitForm } = useFirebase()
 
 const handleSubmit = async () => {
   isSubmitting.value = true
-  // TODO: Implement form submission logic
-  await new Promise(resolve => setTimeout(resolve, 1000)) // Simulated delay
-  showSuccess.value = true
-  isSubmitting.value = false
+  showError.value = false
   
-  // Reset form after 3 seconds
-  setTimeout(() => {
-    form.value = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
+  try {
+    const result = await submitForm(form.value, 'contacts')
+    
+    if (result.success) {
+      showSuccess.value = true
+      // Reset form after success
+      setTimeout(() => {
+        form.value = {
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        }
+        showSuccess.value = false
+      }, 3000)
+    } else {
+      showError.value = true
     }
-    showSuccess.value = false
-  }, 3000)
+  } catch (error) {
+    console.error('Error submitting form:', error)
+    showError.value = true
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -156,6 +169,14 @@ const handleSubmit = async () => {
             class="mt-4 p-4 bg-green-800 text-green-100 rounded-md"
           >
             Message sent successfully! We'll get back to you soon.
+          </div>
+
+          <!-- Error Message -->
+          <div 
+            v-if="showError"
+            class="mt-4 p-4 bg-red-800 text-red-100 rounded-md"
+          >
+            There was an error sending your message. Please try again or contact us directly.
           </div>
         </form>
       </div>
