@@ -190,8 +190,17 @@
               ★★★★★
             </div>
           </div>
-          <p class="text-gray-300 mb-4">"Amazing experience from start to finish. The attention to detail and care for my vision was incredible. I couldn't be happier with my tattoo!"</p>
-          <p class="text-gray-400 font-medium">- Sarah M.</p>
+          <p class="text-gray-300 mb-4">"I got a tattoo of my beautiful dog Luna! Citlalli was great to work with designing the tattoo and at our session she made me feel really comfortable since I hadn't gotten a tattoo in 10 years. I love my tattoo and it healed wonderfully thanks to her instructions. My line work looks super good and I've gotten so many compliments from my tattoo loving friends. Would highly recommend!!!"</p>
+          <div class="flex items-center justify-between">
+            <p class="text-gray-400 font-medium">- Cecilia F.</p>
+            <a 
+              href="https://www.instagram.com/flowerprincessify" 
+              target="_blank" 
+              class="text-gray-500 hover:text-blue-400 text-sm transition-colors"
+            >
+              @flowerprincessify
+            </a>
+          </div>
         </div>
 
         <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
@@ -200,8 +209,17 @@
               ★★★★★
             </div>
           </div>
-          <p class="text-gray-300 mb-4">"Such a comfortable and professional environment. The artist took the time to understand exactly what I wanted and delivered beyond my expectations."</p>
-          <p class="text-gray-400 font-medium">- Mike R.</p>
+          <p class="text-gray-300 mb-4">"Getting tattooed by Ink.c.tatts was an enjoyable experience! The design I chose was a the scarlet witch crown. Throughout the session Citlalli checked in often with how I was feeling, if I needed a break and was very easy to talk too! I HIGHLY Recommend Ink.c.tatts she is an amazing artist and great tattoo artist"</p>
+          <div class="flex items-center justify-between">
+            <p class="text-gray-400 font-medium">- Gabriel G.</p>
+            <a 
+              href="https://www.instagram.com/gaybereal_" 
+              target="_blank" 
+              class="text-gray-500 hover:text-blue-400 text-sm transition-colors"
+            >
+              @gaybereal_
+            </a>
+          </div>
         </div>
 
         <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
@@ -210,8 +228,17 @@
               ★★★★★
             </div>
           </div>
-          <p class="text-gray-300 mb-4">"The level of artistry and creativity is outstanding. My custom design came out perfect, and the whole experience was great!"</p>
-          <p class="text-gray-400 font-medium">- Emily K.</p>
+          <p class="text-gray-300 mb-4">"I got a small chick with butterflies and a Gemini ghost with flowers. Citlalli was very professional and clean. She took her time with making sure the placement was exactly what I wanted and was flexible with any changes I wanted made to the design. My tattoo is fully healed and receives a lot of compliments."</p>
+          <div class="flex items-center justify-between">
+            <p class="text-gray-400 font-medium">- Dafne Q.</p>
+            <a 
+              href="https://www.instagram.com/owllighttherapy" 
+              target="_blank" 
+              class="text-gray-500 hover:text-blue-400 text-sm transition-colors"
+            >
+              @owllighttherapy
+            </a>
+          </div>
         </div>
       </div>
     </div>
