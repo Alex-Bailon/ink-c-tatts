@@ -28,21 +28,17 @@ const handleSubmit = async () => {
     
     if (result.success) {
       showSuccess.value = true
-      // Reset form after success
-      setTimeout(() => {
-        bookingForm.value = {
-          name: '',
-          email: '',
-          phone: '',
-          tattooType: '',
-          size: '',
-          placement: '',
-          description: '',
-          preferredDate: '',
-          additionalInfo: ''
-        }
-        showSuccess.value = false
-      }, 3000)
+      bookingForm.value = {
+        name: '',
+        email: '',
+        phone: '',
+        tattooType: '',
+        size: '',
+        placement: '',
+        description: '',
+        preferredDate: '',
+        additionalInfo: ''
+      }
     } else {
       showError.value = true
     }
@@ -119,7 +115,17 @@ const handleSubmit = async () => {
       <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
         <h2 class="text-2xl font-semibold text-gray-100 mb-6">Booking Request</h2>
         
-        <form @submit.prevent="handleSubmit" class="space-y-4">
+        <div v-if="showSuccess" class="text-center">
+          <div class="mb-6">
+            <svg class="w-16 h-16 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-100 mb-4">Booking Request Sent!</h3>
+          <p class="text-gray-300 mb-6">Thank you for your booking request. I'll review your details and get back to you within 48 hours to discuss your tattoo and schedule your session.</p>
+        </div>
+
+        <form v-else @submit.prevent="handleSubmit" class="space-y-4">
           <div>
             <label for="name" class="block text-sm font-medium text-gray-300">Full Name</label>
             <input 
@@ -231,14 +237,6 @@ const handleSubmit = async () => {
             <span v-if="isSubmitting">Submitting...</span>
             <span v-else>Submit Booking Request</span>
           </button>
-
-          <!-- Success Message -->
-          <div 
-            v-if="showSuccess"
-            class="mt-4 p-4 bg-green-800 text-green-100 rounded-md"
-          >
-            Booking request sent successfully! We'll contact you within 48 hours to discuss your tattoo.
-          </div>
 
           <!-- Error Message -->
           <div 

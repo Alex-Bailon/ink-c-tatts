@@ -20,16 +20,12 @@ const handleSubmit = async () => {
     
     if (result.success) {
       showSuccess.value = true
-      // Reset form after success
-      setTimeout(() => {
-        form.value = {
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        }
-        showSuccess.value = false
-      }, 3000)
+      form.value = {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      }
     } else {
       showError.value = true
     }
@@ -117,7 +113,17 @@ const handleSubmit = async () => {
       <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
         <h2 class="text-2xl font-semibold text-gray-100 mb-6">Send a Message</h2>
         
-        <form @submit.prevent="handleSubmit" class="space-y-4">
+        <div v-if="showSuccess" class="text-center">
+          <div class="mb-6">
+            <svg class="w-16 h-16 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-100 mb-4">Message Sent!</h3>
+          <p class="text-gray-300 mb-6">Thank you for your message. I'll get back to you as soon as possible.</p>
+        </div>
+
+        <form v-else @submit.prevent="handleSubmit" class="space-y-4">
           <div>
             <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
             <input 
@@ -170,14 +176,6 @@ const handleSubmit = async () => {
             <span v-if="isSubmitting">Sending...</span>
             <span v-else>Send Message</span>
           </button>
-
-          <!-- Success Message -->
-          <div 
-            v-if="showSuccess"
-            class="mt-4 p-4 bg-green-800 text-green-100 rounded-md"
-          >
-            Message sent successfully! We'll get back to you soon.
-          </div>
 
           <!-- Error Message -->
           <div 
