@@ -6,7 +6,7 @@
           <!-- Logo Section -->
           <div class="flex-shrink-0 flex items-center">
             <NuxtLink to="/" class="hover:opacity-90 transition-opacity" @click="isMenuOpen = false">
-              <img alt="Ink.C.Tatts logo" class="h-16 w-16 sm:h-24 sm:w-24 object-cover" src="/logo.webp" />
+              <img alt="Ink.C.Tatts logo" class="h-16 w-16 sm:h-24 sm:w-24 object-cover rounded" src="/logo.webp" />
             </NuxtLink>
           </div>
 
