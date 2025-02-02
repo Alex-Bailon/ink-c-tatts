@@ -58,7 +58,7 @@
             <div class="text-white text-2xl font-bold">50+</div>
             <div class="text-gray-300 text-sm">Happy Clients</div>
           </div>
-          <div class="hidden sm:block bg-black bg-opacity-50 p-4 rounded-lg">
+          <div class="col-span-2 sm:col-span-1 bg-black bg-opacity-50 p-4 rounded-lg">
             <div class="text-white text-2xl font-bold">100%</div>
             <div class="text-gray-300 text-sm">Custom Designs</div>
           </div>
@@ -67,7 +67,7 @@
     </div>
 
     <!-- Optional: Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10 hidden sm:block">
       <svg 
         class="w-6 h-6 text-white opacity-75" 
         fill="none" 
@@ -153,24 +153,24 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Replace src with actual images -->
-      <div class="relative group overflow-hidden rounded-lg aspect-square">
+      <NuxtLink to="/gallery" class="relative group overflow-hidden rounded-lg aspect-square">
         <img src="/gallery/gallery-img-01.webp" alt="Featured Tattoo 1" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <NuxtLink to="/gallery" class="text-white hover:text-blue-400 transition-colors">View Gallery</NuxtLink>
+          <span class="text-white hover:text-blue-400 transition-colors">View Gallery</span>
         </div>
-      </div>
-      <div class="relative group overflow-hidden rounded-lg aspect-square">
+      </NuxtLink>
+      <NuxtLink to="/gallery" class="relative group overflow-hidden rounded-lg aspect-square">
         <img src="/gallery/gallery-img-02.webp" alt="Featured Tattoo 2" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <NuxtLink to="/gallery" class="text-white hover:text-blue-400 transition-colors">View Gallery</NuxtLink>
+          <span class="text-white hover:text-blue-400 transition-colors">View Gallery</span>
         </div>
-      </div>
-      <div class="relative group overflow-hidden rounded-lg aspect-square">
+      </NuxtLink>
+      <NuxtLink to="/gallery" class="relative group overflow-hidden rounded-lg aspect-square">
         <img src="/gallery/gallery-img-03.webp" alt="Featured Tattoo 3" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <NuxtLink to="/gallery" class="text-white hover:text-blue-400 transition-colors">View Gallery</NuxtLink>
+          <span class="text-white hover:text-blue-400 transition-colors">View Gallery</span>
         </div>
-      </div>
+      </NuxtLink>
     </div>
     <div class="text-center mt-8">
       <NuxtLink to="/gallery" class="inline-block bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition-colors">
