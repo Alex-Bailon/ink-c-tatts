@@ -127,44 +127,44 @@ const handleSubmit = async () => {
           <div>
             <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
             <input 
-              type="text" 
-              id="name" 
+              type="text"
+              id="name"
               v-model="form.name"
               required
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
           <div>
             <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
             <input 
-              type="email" 
-              id="email" 
+              type="email"
+              id="email"
               v-model="form.email"
               required
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
           <div>
             <label for="subject" class="block text-sm font-medium text-gray-300">Subject</label>
             <input 
-              type="text" 
-              id="subject" 
+              type="text"
+              id="subject"
               v-model="form.subject"
               required
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
           <div>
             <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
             <textarea 
-              id="message" 
+              id="message"
               v-model="form.message"
               rows="4"
               required
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 leading-normal"
             ></textarea>
           </div>
 
