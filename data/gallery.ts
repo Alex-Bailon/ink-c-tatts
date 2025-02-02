@@ -57,6 +57,66 @@ export const galleryImages: GalleryImage[] = [
     category: 'Tattoos'
   },
   {
+    url: '/gallery/gallery-img-30.webp',
+    title: 'Custom Heart Design',
+    description: 'Tiny Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-31.webp', 
+    title: 'Custom Duck and Butterfly Design',
+    description: 'Tiny Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-32.webp',
+    title: 'Custom Floral Design',
+    description: 'Black Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-33.webp',
+    title: 'Custom Mandala Design',
+    description: 'Black Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-34.webp',
+    title: 'Custom Butterfly Design',
+    description: 'Tiny Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-35.webp',
+    title: 'Custom Finger Design',
+    description: 'Tiny Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-36.webp',
+    title: 'Custom Ornamental Design',
+    description: 'Tiny Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-37.webp',
+    title: 'Custom Skull Design',
+    description: 'Black Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-38.webp',
+    title: 'Custom Flower/ Memorial Design',
+    description: 'Black Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/gallery-img-39.webp',
+    title: 'Inspired Ghost Design',
+    description: 'Black Line work',
+    category: 'Tattoos'
+  },
+  {
     url: '/gallery/gallery-img-09.webp',
     title: 'Valentines Day Flash',
     description: 'Black and shading/ line work',
