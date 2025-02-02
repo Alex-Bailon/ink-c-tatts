@@ -1,46 +1,49 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <header class="shadow-md">
+    <header class="sticky top-0 z-50 shadow-md backdrop-blur-sm bg-black/95">
       <nav class="w-full px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between items-center h-20 sm:h-28">
           <!-- Logo Section -->
           <div class="flex-shrink-0 flex items-center">
-            <img alt="Vue logo" class="h-12 w-auto" src="/logo.png" />
+            <NuxtLink to="/" class="hover:opacity-90 transition-opacity">
+              <img alt="Ink.C.Tatts logo" class="h-16 w-16 sm:h-24 sm:w-24 object-cover" src="/logo.webp" />
+            </NuxtLink>
           </div>
+
 
           <!-- Desktop Navigation -->
           <div class="hidden sm:flex sm:space-x-8">
             <NuxtLink 
               to="/" 
-              class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+              class="text-gray-300 hover:text-white px-4 py-3 text-xl font-medium transition-colors"
               active-class="text-blue-400"
             >
               Home
             </NuxtLink>
             <NuxtLink 
               to="/booking" 
-              class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+              class="text-gray-300 hover:text-white px-4 py-3 text-xl font-medium transition-colors"
               active-class="text-blue-400"
             >
               Book Now
             </NuxtLink>
             <NuxtLink 
               to="/aftercare" 
-              class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+              class="text-gray-300 hover:text-white px-4 py-3 text-xl font-medium transition-colors"
               active-class="text-blue-400"
             >
               Aftercare
             </NuxtLink>
             <NuxtLink 
               to="/gallery" 
-              class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+              class="text-gray-300 hover:text-white px-4 py-3 text-xl font-medium transition-colors"
               active-class="text-blue-400"
             >
               Gallery
             </NuxtLink>
             <NuxtLink 
               to="/contact" 
-              class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+              class="text-gray-300 hover:text-white px-4 py-3 text-xl font-medium transition-colors"
               active-class="text-blue-400"
             >
               Contact

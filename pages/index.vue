@@ -263,10 +263,13 @@
 
 <style scoped>
 .hero {
-  background-image: url('/hero.jpg');
+  background-image: url('/hero.webp');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  @media (min-width: 768px) {
+    background-attachment: fixed;
+  }
   min-height: calc(100vh - 64px);
   display: flex;
   align-items: center;

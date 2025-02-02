@@ -9,10 +9,11 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'UTF-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+        { name: 'theme-color', content: '#000000' },
         { name: 'description', content: 'Ink.C.Tatts is a tattoo shop located in the Chicagoland area' },
         { property: 'og:title', content: 'Ink.C.Tatts' },
         { property: 'og:description', content: 'Ink.C.Tatts is a tattoo shop located in the Chicagoland area' },
-        { property: 'og:image', content: 'https://ink-c-tatts.netlify.app/logo-white.png' },
+        { property: 'og:image', content: 'https://ink-c-tatts.netlify.app/logo.webp' },
         { property: 'og:url', content: 'https://ink-c-tatts.netlify.app/' },
         { property: 'og:type', content: 'website' }
       ],
