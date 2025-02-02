@@ -31,13 +31,13 @@ const careInstructions = ref<string[]>([
           </div>
           <h2 class="text-2xl font-semibold text-gray-100">First 24 Hours</h2>
         </div>
-        <div class="space-y-4 text-gray-300">
-          <p>• Leave the bandage on for 2-4 hours after getting your tattoo</p>
-          <p>• Gently wash the tattoo with lukewarm water and unscented antibacterial soap</p>
-          <p>• Pat dry with a clean paper towel - do not rub</p>
-          <p>• Apply a thin layer of recommended aftercare ointment</p>
-          <p>• Do not re-bandage the tattoo</p>
-        </div>
+        <ul class="list-disc list-inside space-y-4 text-gray-300">
+          <li>Leave the initial bandage on for 2-3 hours, unless instructed otherwise by your artist. If a second-skin bandage (like Saniderm) was applied, it may be worn for 24-72 hours, depending on your artist's recommendation</li>
+          <li>After removing the bandage, gently wash your tattoo with lukewarm water and unscented antibacterial soap to remove any plasma or excess ink</li>
+          <li>Pat dry with a clean paper towel - do not rub</li>
+          <li>Apply a thin layer of recommended aftercare ointment</li>
+          <li>Do not re-bandage the tattoo unless instructed by your artist</li>
+        </ul>
       </div>
 
       <!-- First Week -->
@@ -50,13 +50,13 @@ const careInstructions = ref<string[]>([
           </div>
           <h2 class="text-2xl font-semibold text-gray-100">First Week</h2>
         </div>
-        <div class="space-y-4 text-gray-300">
-          <p>• Wash your tattoo 2-3 times daily with lukewarm water and unscented soap</p>
-          <p>• Apply a thin layer of aftercare product after each wash</p>
-          <p>• Do not soak the tattoo (no baths, swimming, etc.)</p>
-          <p>• Wear loose-fitting, clean clothing over the tattoo</p>
-          <p>• Avoid direct sunlight</p>
-        </div>
+        <ul class="list-disc list-inside space-y-4 text-gray-300">
+          <li>Wash your tattoo 2-3 times daily with lukewarm water and unscented soap</li>
+          <li>Apply a thin layer of aftercare product after each wash</li>
+          <li>Do not soak the tattoo (no baths, swimming, etc.)</li>
+          <li>Wear loose-fitting, clean clothing over the tattoo</li>
+          <li>Avoid activities that cause heavy sweating, such as intense workouts, until the tattoo is fully healed. Sweat can introduce bacteria and irritate the healing process</li>
+        </ul>
       </div>
 
       <!-- Long Term Care -->
@@ -69,12 +69,12 @@ const careInstructions = ref<string[]>([
           </div>
           <h2 class="text-2xl font-semibold text-gray-100">Long Term Care</h2>
         </div>
-        <div class="space-y-4 text-gray-300">
-          <p>• Keep the tattoo moisturized with unscented lotion</p>
-          <p>• Always protect your tattoo from sun exposure with SPF 50+ sunscreen</p>
-          <p>• Avoid tanning beds and prolonged sun exposure</p>
-          <p>• Maintain good skin health through proper hydration and care</p>
-        </div>
+        <ul class="list-disc list-inside space-y-4 text-gray-300">
+          <li>Keep the tattoo moisturized with unscented lotion</li>
+          <li>Always protect your tattoo from sun exposure with SPF 50+ sunscreen</li>
+          <li>Avoid tanning beds and prolonged sun exposure</li>
+          <li>Maintain good skin health through proper hydration and care</li>
+        </ul>
       </div>
 
       <!-- Important Notes -->
@@ -93,7 +93,7 @@ const careInstructions = ref<string[]>([
             <ul class="list-disc list-inside space-y-2 text-gray-300">
               <li>Pick or scratch at scabs</li>
               <li>Expose tattoo to direct sunlight while healing</li>
-              <li>Swim, soak in hot tubs, or take long baths</li>
+              <li>Do not soak the tattoo- avoid swimming, hot tubs, and baths. Stick to quick showers, keeping the tattoo out of direct water pressure</li>
               <li>Apply harsh chemicals or fragranced products</li>
               <li>Wear tight or abrasive clothing over the tattoo</li>
             </ul>

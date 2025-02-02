@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import { useFirebase } from '@/composables/useFirebase'
 
 const bookingForm = ref({
@@ -14,12 +14,85 @@ const bookingForm = ref({
   additionalInfo: ''
 })
 
+const formatPhoneNumber = (value: string) => {
+  // Remove all non-digits
+  const cleaned = value.replace(/\D/g, '')
+  
+  // Format the number
+  if (cleaned.length === 0) return ''
+  if (cleaned.length <= 3) return `(${cleaned}`
+  if (cleaned.length <= 6) return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`
+  return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6, 10)}`
+}
+
+const handlePhoneInput = (e: Event) => {
+  const input = e.target as HTMLInputElement
+  const cursorPosition = input.selectionStart || 0
+  
+  // Only allow numbers
+  const numbersOnly = input.value.replace(/\D/g, '')
+  if (numbersOnly.length > 10) return // Limit to 10 digits
+  
+  const formatted = formatPhoneNumber(numbersOnly)
+  bookingForm.value.phone = formatted
+
+  // Restore cursor position
+  nextTick(() => {
+    let newPosition = cursorPosition
+    
+    // Adjust cursor based on where formatting characters were added
+    if (numbersOnly.length <= 3) {
+      // Inside or right after area code
+      newPosition = cursorPosition + (cursorPosition === 1 ? 1 : 0)
+    } else if (numbersOnly.length === 4) {
+      // Just added first number after area code
+      newPosition = 7
+    } else if (numbersOnly.length <= 6) {
+      // In the middle group of numbers
+      newPosition = cursorPosition + (cursorPosition >= 4 ? 2 : 0)
+    } else if (numbersOnly.length === 7) {
+      // Just added first number after hyphen
+      newPosition = 11
+    } else {
+      // In the last group of numbers
+      newPosition = cursorPosition + (cursorPosition >= 9 ? 3 : 0)
+    }
+    
+    input.setSelectionRange(newPosition, newPosition)
+  })
+}
+
+const handlePhoneKeyDown = (e: KeyboardEvent) => {
+  // Allow: backspace, delete, tab, escape, enter
+  if ([46, 8, 9, 27, 13].includes(e.keyCode) ||
+    // Allow: Ctrl+A, Command+A
+    (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+    // Allow: home, end, left, right, down, up
+    (e.keyCode >= 35 && e.keyCode <= 40)) {
+    return
+  }
+  // Block any key that isn't a number
+  if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+    e.preventDefault()
+  }
+}
+
+const isValidPhone = (phone: string) => {
+  return phone.replace(/\D/g, '').length === 10
+}
+
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
 const showError = ref(false)
 const { submitForm } = useFirebase()
 
 const handleSubmit = async () => {
+  // Check for complete phone number
+  if (!isValidPhone(bookingForm.value.phone)) {
+    showError.value = true
+    return
+  }
+
   isSubmitting.value = true
   showError.value = false
   
@@ -153,10 +226,19 @@ const handleSubmit = async () => {
             <input 
               type="tel" 
               id="phone" 
-              v-model="bookingForm.phone"
+              :value="bookingForm.phone"
+              @input="handlePhoneInput"
+              @keydown="handlePhoneKeyDown"
+              maxlength="14"
+              placeholder="(555) 555-5555"
               required
+              pattern="\(\d{3}\)\s\d{3}-\d{4}"
+              title="Please enter a complete phone number: (XXX) XXX-XXXX"
               class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
+            <p v-if="bookingForm.phone && !isValidPhone(bookingForm.phone)" class="mt-1 text-sm text-red-500">
+              Please enter a complete 10-digit phone number
+            </p>
           </div>
 
           <div>
