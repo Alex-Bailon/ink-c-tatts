@@ -133,7 +133,7 @@ const handleSubmit = async () => {
               id="name" 
               v-model="bookingForm.name"
               required
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
@@ -144,7 +144,7 @@ const handleSubmit = async () => {
               id="email" 
               v-model="bookingForm.email"
               required
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
@@ -155,7 +155,7 @@ const handleSubmit = async () => {
               id="phone" 
               v-model="bookingForm.phone"
               required
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
@@ -167,7 +167,7 @@ const handleSubmit = async () => {
               v-model="bookingForm.tattooType"
               required
               placeholder="e.g., Traditional, Realistic, Custom Design"
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
@@ -179,7 +179,7 @@ const handleSubmit = async () => {
               v-model="bookingForm.size"
               required
               placeholder="e.g., 3x3 inches, palm size"
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
@@ -191,7 +191,7 @@ const handleSubmit = async () => {
               v-model="bookingForm.placement"
               required
               placeholder="e.g., Forearm, Back, Ankle"
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 leading-none"
             >
           </div>
 
@@ -203,7 +203,7 @@ const handleSubmit = async () => {
               rows="4"
               required
               placeholder="Please describe your tattoo idea in detail"
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 leading-normal"
             ></textarea>
           </div>
 
@@ -214,7 +214,7 @@ const handleSubmit = async () => {
               id="preferredDate" 
               v-model="bookingForm.preferredDate"
               required
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-400 shadow-sm focus:border-blue-500 focus:ring-blue-500 [color-scheme:dark] [&:not(:placeholder-shown)]:text-gray-100 px-3 leading-none"
             >
           </div>
 
@@ -225,7 +225,7 @@ const handleSubmit = async () => {
               v-model="bookingForm.additionalInfo"
               rows="3"
               placeholder="Any additional details or questions?"
-              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 leading-normal"
             ></textarea>
           </div>
 
@@ -253,4 +253,12 @@ const handleSubmit = async () => {
 
 <style scoped>
 /* Add any custom styles here */
+input, select {
+  line-height: 1 !important;
+  height: 2.25rem;
+}
+
+textarea {
+  line-height: 1.2;
+}
 </style>
