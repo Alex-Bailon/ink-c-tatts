@@ -133,7 +133,7 @@
       <slot />
     </main>
 
-    <footer class="mt-auto py-6">
+    <footer class="mt-auto py-6 bg-black">
       <p class="text-center text-gray-400">
         Made with ❤️ by <a href="https://www.instagram.com/ink.c.tatts/" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">@ink.c.tatts</a>
       </p>
