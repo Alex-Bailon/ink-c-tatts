@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&family=Sixtyfour+Convergence&display=swap');
+@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: 'Miltonian Tattoo', cursive;
+  font-size: 3rem;
+  color: var(--color-heading);
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  /* margin: 1rem 0; */
+  border: var(--color-background-invert);
+  cursor: pointer;
+  border-radius: 4px;
+  background: var(--color-background-invert);
+  color: var(--color-heading-invert);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, opacity 0.3s;
+}
+.primary-button:hover {
+  opacity: 0.8;
+}
