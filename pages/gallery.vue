@@ -1,56 +1,21 @@
 <script setup lang="ts">
-// Array of gallery images
-// Each image object contains url, title, and description
-const galleryImages = ref([
-  // Example structure (commented out for now)
-  {
-    url: '/gallery/gallery-img-01.webp',
-    title: 'Custom Snorlax Design',
-    description: 'Line and dot work'
-  },
-  {
-    url: '/gallery/gallery-img-02.webp',
-    title: 'Custom Masked Cat Design',
-    description: 'Black and grey line work'
-  },
-  {
-    url: '/gallery/gallery-img-03.webp',
-    title: 'Naive/ Folk- art Inspired Design',
-    description: 'Black line work'
-  },
-  {
-    url: '/gallery/gallery-img-04.webp',
-    title: 'Custom Hot Chicken Wing Design',
-    description: 'Etching and line work'
-  },
-  {
-    url: '/gallery/gallery-img-05.webp',
-    title: 'Custom Luna (dog) Design',
-    description: 'Abstract Line work'
-  },
-  {
-    url: '/gallery/gallery-img-06.webp',
-    title: 'Custom Gemini Ghost Design',
-    description: 'Black Line work'
-  },
-  {
-    url: '/gallery/gallery-img-07.webp',
-    title: 'Custom Butterfly Design',
-    description: 'Black Line work'
-  },
-  {
-    url: '/gallery/gallery-img-08.webp',
-    title: 'Etched Inspired Design',
-    description: 'Etching and Line work'
-  },  
-])
+import { categories, galleryImages } from '@/data/gallery'
+import type { GalleryImage } from '@/data/gallery'
+
+const selectedCategory = ref('All')
+
+// Filtered images based on selected category
+const filteredImages = computed(() => {
+  if (selectedCategory.value === 'All') return galleryImages
+  return galleryImages.filter((image: GalleryImage) => image.category === selectedCategory.value)
+})
 
 // State for modal/lightbox
-const selectedImage = ref(null)
+const selectedImage = ref<GalleryImage | null>(null)
 const isModalOpen = ref(false)
 
 // Functions to handle modal
-const openModal = (image: any) => {
+const openModal = (image: GalleryImage) => {
   selectedImage.value = image
   isModalOpen.value = true
 }
@@ -64,17 +29,36 @@ const closeModal = () => {
 <template>
   <div class="min-h-screen p-4 sm:p-6 lg:p-8">
     <!-- Gallery Header -->
-    <div class="text-center mb-12">
+    <div class="text-center mb-8">
       <h1 class="text-4xl font-bold text-gray-100 mb-4">Gallery</h1>
       <p class="text-gray-300 max-w-2xl mx-auto">
         Explore my portfolio of custom tattoo designs. Each piece tells a unique story and represents a collaborative journey with my clients.
       </p>
     </div>
 
+    <!-- Category Filters -->
+    <div class="mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button
+          v-for="category in categories"
+          :key="category"
+          @click="selectedCategory = category"
+          :class="[
+            'px-4 py-2 rounded-md text-sm font-medium transition-colors',
+            selectedCategory === category
+              ? 'bg-blue-600 text-white'
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+          ]"
+        >
+          {{ category }}
+        </button>
+      </div>
+    </div>
+
     <!-- Gallery Grid -->
-    <div v-if="galleryImages.length > 0" 
-         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div v-for="(image, index) in galleryImages" 
+    <div v-if="filteredImages.length > 0" 
+         class="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+      <div v-for="(image, index) in filteredImages" 
            :key="index"
            class="group relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] aspect-square"
            @click="openModal(image)">
@@ -83,9 +67,9 @@ const closeModal = () => {
              class="w-full h-full object-cover"
              loading="lazy" />
         <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-          <div class="p-4 w-full">
-            <h3 class="text-white font-semibold">{{ image.title }}</h3>
-            <p class="text-gray-200 text-sm">{{ image.description }}</p>
+          <div class="p-3 w-full">
+            <h3 class="text-white font-semibold text-sm sm:text-base">{{ image.title }}</h3>
+            <p class="text-gray-200 text-xs sm:text-sm">{{ image.description }}</p>
           </div>
         </div>
       </div>
@@ -97,8 +81,8 @@ const closeModal = () => {
         <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
-        <p class="text-xl">Gallery Coming Soon</p>
-        <p class="mt-2">Check back later for amazing tattoo designs!</p>
+        <p class="text-xl">No images found</p>
+        <p class="mt-2">Try selecting a different category.</p>
       </div>
     </div>
 
