@@ -65,7 +65,9 @@ const closeModal = () => {
         <img :src="image.url" 
              :alt="image.title"
              class="w-full h-full object-cover"
-             loading="lazy" />
+             loading="lazy"
+             decoding="async"
+             fetchpriority="low" />
         <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
           <div class="p-3 w-full">
             <h3 class="text-white font-semibold text-sm sm:text-base">{{ image.title }}</h3>
@@ -106,6 +108,9 @@ const closeModal = () => {
             :src="selectedImage.url" 
             :alt="selectedImage.title"
             class="w-full max-h-[75vh] object-contain rounded-lg shadow-2xl"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           
           <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 backdrop-blur-sm p-4 rounded-b-lg text-center">
