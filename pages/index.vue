@@ -17,7 +17,7 @@
         </p>
         
         <!-- Call to Action Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center items-center">
           <NuxtLink 
             to="/booking" 
             class="primary-button"
