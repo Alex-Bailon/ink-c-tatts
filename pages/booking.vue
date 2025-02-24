@@ -320,6 +320,22 @@ const handleSubmit = async () => {
             <span v-else>Submit Booking Request</span>
           </button>
 
+          <!-- Privacy Notice -->
+          <div class="mt-4 text-sm text-gray-400 bg-gray-900 p-4 rounded-md">
+            <h4 class="font-medium text-gray-300 mb-2">Privacy Notice</h4>
+            <p class="mb-2">
+              Your privacy matters. The information you provide (name, email, phone) will only be used to:
+            </p>
+            <ul class="list-disc list-inside space-y-1 mb-2">
+              <li>Contact you about your tattoo request</li>
+              <li>Schedule and manage your appointment</li>
+              <li>Send important information about your booking</li>
+            </ul>
+            <p>
+              Your data is securely stored and never sold or shared with third parties. By submitting this form, you consent to being contacted about your tattoo request.
+            </p>
+          </div>
+
           <!-- Error Message -->
           <div 
             v-if="showError"

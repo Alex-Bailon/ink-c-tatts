@@ -50,10 +50,10 @@ const handleSubmit = async () => {
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Contact Information -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-semibold text-gray-100 mb-6">Get in Touch</h2>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg h-fit">
+        <h2 class="text-2xl font-semibold text-gray-100 mb-4">Get in Touch</h2>
         
-        <div class="space-y-6">
+        <div class="space-y-4">
           <div class="flex items-center space-x-4">
             <div class="text-blue-400 flex-shrink-0">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@ const handleSubmit = async () => {
             </div>
             <div>
               <h3 class="text-gray-100 font-medium">Location</h3>
-              <p class="text-gray-300 mt-1">Schaumburg, IL</p>
+              <p class="text-gray-300">Schaumburg, IL</p>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ const handleSubmit = async () => {
               <h3 class="text-gray-100 font-medium">Email</h3>
               <a 
                 href="mailto:citlalli.tattoo@gmail.com" 
-                class="text-gray-300 mt-1 hover:text-blue-400 transition-colors inline-block"
+                class="text-gray-300 hover:text-blue-400 transition-colors inline-block"
               >
                 ink.c.tatts@gmail.com
               </a>
@@ -100,7 +100,7 @@ const handleSubmit = async () => {
                 href="https://www.instagram.com/citlalli.tattoo" 
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-300 mt-1 hover:text-blue-400 transition-colors inline-block"
+                class="text-gray-300 hover:text-blue-400 transition-colors inline-block"
               >
                 @ink.c.tatts
               </a>
@@ -176,6 +176,22 @@ const handleSubmit = async () => {
             <span v-if="isSubmitting">Sending...</span>
             <span v-else>Send Message</span>
           </button>
+
+          <!-- Privacy Notice -->
+          <div class="mt-4 text-sm text-gray-400 bg-gray-900 p-4 rounded-md">
+            <h4 class="font-medium text-gray-300 mb-2">Privacy Notice</h4>
+            <p class="mb-2">
+              Your privacy is important to us. The information you provide (name and email) will only be used to:
+            </p>
+            <ul class="list-disc list-inside space-y-1 mb-2">
+              <li>Respond to your message</li>
+              <li>Provide information you've requested</li>
+              <li>Maintain a record of our communication</li>
+            </ul>
+            <p>
+              Your data is securely stored and never sold or shared with third parties. By submitting this form, you consent to being contacted regarding your inquiry.
+            </p>
+          </div>
 
           <!-- Error Message -->
           <div 
