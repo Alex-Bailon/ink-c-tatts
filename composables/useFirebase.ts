@@ -1,8 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { useReCaptcha } from 'vue-recaptcha-v3';
+import { useRuntimeConfig } from '#app';
 
 export const useFirebase = () => {
-  if (process.client) {
+  if (typeof window !== 'undefined') {
     const config = useRuntimeConfig()
     
     const firebaseConfig = {
@@ -18,12 +20,26 @@ export const useFirebase = () => {
     try {
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
-
+      const reCaptchaInstance = useReCaptcha();
       const submitForm = async (formData: any, collectionName: string) => {
         try {
+          // Wait for reCAPTCHA to load
+          await reCaptchaInstance?.recaptchaLoaded();
+          
+          // Get the reCAPTCHA token - use the collection name as the action
+          const recaptchaToken = await reCaptchaInstance?.executeRecaptcha(collectionName);
+          
+          if (!recaptchaToken) {
+            throw new Error('reCAPTCHA verification failed');
+          }
+          
           const response = await fetch('/.netlify/functions/submitForm', {
             method: 'POST',
-            body: JSON.stringify({ formData, collectionName }),
+            body: JSON.stringify({ 
+              formData, 
+              collectionName,
+              recaptchaToken 
+            }),
             headers: {
               'Content-Type': 'application/json',
             },

@@ -1,7 +1,7 @@
 import type { Handler } from '@netlify/functions'
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-
+import fetch from 'node-fetch';
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -16,6 +16,45 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Function to verify reCAPTCHA token
+async function verifyRecaptcha(token: string) {
+  try {
+    // Get the secret key from environment variables
+    const secretKey = process.env.GOOGLE_RECAPTCHA_SECRET_KEY;
+    
+    if (!secretKey) {
+      throw new Error('reCAPTCHA secret key is not configured');
+    }
+    
+    // Make a request to the Google reCAPTCHA verification API
+    const response = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `secret=${secretKey}&response=${token}`,
+    });
+    
+    const data = await response.json();
+    
+    // Verify the response
+    if (!data.success) {
+      throw new Error(`reCAPTCHA verification failed: ${data['error-codes']?.join(', ') || 'unknown error'}`);
+    }
+    
+    // For reCAPTCHA v3, check the score (0.0 to 1.0)
+    // Typically a score of 0.5 or higher is considered human
+    if (data.score !== undefined && data.score < 0.5) {
+      throw new Error(`reCAPTCHA score too low: ${data.score}`);
+    }
+    
+    return true;
+  } catch (error) {
+    console.error('reCAPTCHA verification error:', error);
+    throw error;
+  }
+}
+
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return {
@@ -25,8 +64,30 @@ export const handler: Handler = async (event) => {
   }
 
   try {
-    const { formData, collectionName } = JSON.parse(event.body || '{}')
-
+    const { formData, collectionName, recaptchaToken } = JSON.parse(event.body || '{}')
+    
+    // Verify reCAPTCHA token before proceeding
+    if (!recaptchaToken) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ 
+          success: false, 
+          error: 'reCAPTCHA token is required' 
+        })
+      }
+    }
+    
+    try {
+      await verifyRecaptcha(recaptchaToken);
+    } catch (recaptchaError) {
+      return {
+        statusCode: 403,
+        body: JSON.stringify({ 
+          success: false, 
+          error: recaptchaError instanceof Error ? recaptchaError.message : 'reCAPTCHA verification failed' 
+        })
+      }
+    }
     // Submit the form data
     const docRef = await addDoc(collection(db, collectionName), {
       ...formData,
