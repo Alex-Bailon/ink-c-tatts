@@ -125,8 +125,9 @@ export const handler: Handler = async (event) => {
     }
 
     // Add email document to mail collection
+    const emailAddresses = process.env.EMAIL_ADDRESSES?.split(',') || [];
     const mailRef = await addDoc(collection(db, 'mail'), {
-      to: ['abailon949@gmail.com', 'citlalli_perez@yahoo.com'],
+      to: emailAddresses,
       message: {
         subject: emailSubject,
         html: emailHtml,
