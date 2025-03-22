@@ -65,18 +65,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Optional: Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10 hidden sm:block">
-      <svg 
-        class="w-6 h-6 text-white opacity-75" 
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    </div>
   </div>
 
   <!-- Bio Section -->
@@ -290,7 +278,7 @@
   @media (min-width: 768px) {
     background-attachment: fixed;
   }
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 112px);
   display: flex;
   align-items: center;
   position: relative;
@@ -307,10 +295,12 @@
 
 .primary-button {
   @apply bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center w-full sm:w-auto;
+  height: 53px;
 }
 
 .secondary-button {
-  @apply bg-gray-800 text-white py-3 px-6 rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center w-full sm:w-auto border border-gray-600;
+  @apply bg-gray-800 text-white py-3 px-6 rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center w-full sm:w-auto;
+  height: 53px;
 }
 
 @keyframes bounce {
