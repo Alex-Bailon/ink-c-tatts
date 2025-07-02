@@ -167,7 +167,7 @@ const isMenuOpen = ref(false)
 /* Any custom styles that can't be handled by Tailwind can go here */
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.2s ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 .page-enter-from,
 .page-leave-to {
