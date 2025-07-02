@@ -9,6 +9,73 @@ export const categories = ['All', 'Tattoos', 'Flash', 'Digital Art']
 
 export const galleryImages: GalleryImage[] = [
   {
+    url: '/gallery/multi.webp',
+    title: 'El Nopal Illustration/ Incomplete PotterySun',
+    description: 'Dot andLine work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/hand.webp',
+    title: 'Hand Inspired Design',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/astro.webp',
+    title: 'Astronaut Inspired Design',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/rockt.webp',
+    title: 'Rocket Inspired Design',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/boot.webp',
+    title: 'Boot with Flowers Inspired Design',
+    description: 'Black Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/neck.webp',
+    title: 'Lettering Custom Design',
+    description: 'Black and Grey Design',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/covr.webp',
+    title: 'Cherry Custom Cover Design Unfinished',
+    description: 'Black and Grey Design',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/ele.webp',
+    title: 'Elephant Mother Child Inspired Design',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/lemn.webp',
+    title: 'Half Lemon Inspired Design',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/bow.webp',
+    title: 'Bow Inspired Design',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/bfly.webp',
+    title: 'Butterfly Custom Design',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+
+  {
     url: '/gallery/gallery-img-01.webp',
     title: 'Custom Snorlax Design',
     description: 'Line and dot work',
@@ -75,12 +142,6 @@ export const galleryImages: GalleryImage[] = [
     category: 'Tattoos'
   },
   {
-    url: '/gallery/gallery-img-33.webp',
-    title: 'Custom Mandala Design',
-    description: 'Black Line work',
-    category: 'Tattoos'
-  },
-  {
     url: '/gallery/gallery-img-34.webp',
     title: 'Custom Butterfly Design',
     description: 'Tiny Line work',
@@ -89,12 +150,6 @@ export const galleryImages: GalleryImage[] = [
   {
     url: '/gallery/gallery-img-35.webp',
     title: 'Custom Finger Design',
-    description: 'Tiny Line work',
-    category: 'Tattoos'
-  },
-  {
-    url: '/gallery/gallery-img-36.webp',
-    title: 'Custom Ornamental Design',
     description: 'Tiny Line work',
     category: 'Tattoos'
   },
@@ -115,6 +170,30 @@ export const galleryImages: GalleryImage[] = [
     title: 'Inspired Ghost Design',
     description: 'Black Line work',
     category: 'Tattoos'
+  },
+  {
+    url: '/gallery/bee.webp',
+    title: 'Bee',
+    description: 'Black and Grey Design',
+    category: 'Digital Art'
+  },
+  {
+    url: '/gallery/santa.webp',
+    title: 'Virgin Mary',
+    description: 'Inspired Design/ Depicted Art work',
+    category: 'Digital Art'
+  },
+  {
+    url: '/gallery/crtoon.webp',
+    title: 'Surrealism',
+    description: 'Cartoon and Person Art',
+    category: 'Digital Art'
+  },
+  {
+    url: '/gallery/avatr.webp',
+    title: 'Avatar',
+    description: 'Avatar Depiction Art work',
+    category: 'Digital Art'
   },
   {
     url: '/gallery/gallery-img-09.webp',

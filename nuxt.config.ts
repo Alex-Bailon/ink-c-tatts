@@ -20,7 +20,11 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/png', href: '/logo.webp' }
       ]
-    }
+    },
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    }    
   },
   modules: ['@nuxtjs/tailwindcss'],
   runtimeConfig: {

@@ -157,7 +157,7 @@
       </NuxtLink>
       <NuxtLink to="/gallery" class="relative group overflow-hidden rounded-lg aspect-square">
         <img 
-          src="/gallery/gallery-img-02.webp" 
+          src="/gallery/multi.webp" 
           alt="Featured Tattoo 2" 
           loading="lazy"
           decoding="async"

@@ -296,6 +296,7 @@ const handleSubmit = async () => {
               id="preferredDate" 
               v-model="bookingForm.preferredDate"
               required
+              :min="'2025-07-14'"
               class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-gray-400 shadow-sm focus:border-blue-500 focus:ring-blue-500 [color-scheme:dark] [&:not(:placeholder-shown)]:text-gray-100 px-3 leading-none"
             >
           </div>
