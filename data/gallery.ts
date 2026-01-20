@@ -9,6 +9,54 @@ export const categories = ['All', 'Tattoos', 'Flash', 'Digital Art']
 
 export const galleryImages: GalleryImage[] = [
   {
+    url: '/gallery/tamalera.webp',
+    title: 'La Tamalera Original Tattoo Design/ Incomplete PotterySun',
+    description: 'Line work and Shading',
+    category: 'Tattoos'
+  },  
+  {
+    url: '/gallery/spider.webp',
+    title: 'Halloween Flash Custom Spider Design/ Incomplete PotterySun',
+    description: 'Black and Grey',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/recreateclown.webp',
+    title: 'Goth Clown Custom Recreate Design/ Incomplete PotterySun',
+    description: 'Black and Grey',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/indianskull.webp',
+    title: 'Cultural Costum Skull Design/ Incomplete PotterySun',
+    description: 'Black and Grey Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/dragoutline.webp',
+    title: 'Custom Dragon Outline Design/ Incomplete PotterySun',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/customdnd.webp',
+    title: 'Costum DnD Design/ Incomplete PotterySun',
+    description: 'Black and Grey Shaded Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/custompaw.webp',
+    title: 'Custom Flower Paw Print Design/ Incomplete PotterySun',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
+    url: '/gallery/virginfinger.webp',
+    title: 'Virgin Mary Finger Tattoo Design/ Incomplete PotterySun',
+    description: 'Line work',
+    category: 'Tattoos'
+  },
+  {
     url: '/gallery/multi.webp',
     title: 'El Nopal Illustration/ Incomplete PotterySun',
     description: 'Dot andLine work',
@@ -172,6 +220,36 @@ export const galleryImages: GalleryImage[] = [
     category: 'Tattoos'
   },
   {
+    url: '/gallery/dogportrait.webp',
+    title: 'Chispas Dog Portrait',
+    description: 'Black and Grey Portrait',
+    category: 'Digital Art'
+  },
+  {
+    url: '/gallery/commemorate.webp',
+    title: 'Commemorate Dog Portrait',
+    description: 'Color Portrait',
+    category: 'Digital Art'
+  },
+  {
+    url: '/gallery/favcharacters.webp',
+    title: 'Favorite Characters Portrait',
+    description: 'Black and Grey Portrait',
+    category: 'Digital Art'
+  },
+  {
+    url: '/gallery/rosariodrawing.webp',
+    title: 'Rosario Tijeras Portrait',
+    description: 'Black and Grey Portrait',
+    category: 'Digital Art'
+  },
+  {
+    url: '/gallery/customsqueak.webp',
+    title: 'Squeak Design Drawing',
+    description: 'Black and Grey Design',
+    category: 'Digital Art'
+  }, 
+  {
     url: '/gallery/bee.webp',
     title: 'Bee',
     description: 'Black and Grey Design',
@@ -194,6 +272,24 @@ export const galleryImages: GalleryImage[] = [
     title: 'Avatar',
     description: 'Avatar Depiction Art work',
     category: 'Digital Art'
+  },
+  {
+    url: '/gallery/26valflash.webp',
+    title: '2026 Valentines Day Flash',
+    description: 'Black and shading/ line work/ Red ink',
+    category: 'Flash'
+  },
+  {
+    url: '/gallery/blckwhiteflash.webp',
+    title: 'Small Tattoo Flash',
+    description: 'Black and shading/ line work',
+    category: 'Flash'
+  },
+  {
+    url: '/gallery/swissflash.webp',
+    title: 'Switzerland Trip Flash',
+    description: 'Black and shading/ line work',
+    category: 'Flash'
   },
   {
     url: '/gallery/gallery-img-09.webp',

@@ -175,7 +175,6 @@ const handleSubmit = async () => {
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
           <h2 class="text-2xl font-semibold text-gray-100 mb-6">Booking Policies</h2>
           <div class="space-y-4 text-gray-300">
-            <p>• A deposit is required to secure your booking</p>
             <p>• 48-hour cancellation notice required</p>
             <p>• Please arrive 15 minutes before your appointment</p>
             <p>• Bring a valid ID</p>

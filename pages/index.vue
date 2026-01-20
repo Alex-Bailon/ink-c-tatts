@@ -145,7 +145,7 @@
       <!-- Replace src with actual images -->
       <NuxtLink to="/gallery" class="relative group overflow-hidden rounded-lg aspect-square">
         <img 
-          src="/gallery/gallery-img-01.webp" 
+          src="/gallery/tamalera.webp" 
           alt="Featured Tattoo 1" 
           loading="lazy"
           decoding="async"
@@ -157,7 +157,7 @@
       </NuxtLink>
       <NuxtLink to="/gallery" class="relative group overflow-hidden rounded-lg aspect-square">
         <img 
-          src="/gallery/multi.webp" 
+          src="/gallery/spider.webp" 
           alt="Featured Tattoo 2" 
           loading="lazy"
           decoding="async"
@@ -169,7 +169,7 @@
       </NuxtLink>
       <NuxtLink to="/gallery" class="relative group overflow-hidden rounded-lg aspect-square">
         <img 
-          src="/gallery/gallery-img-03.webp" 
+          src="/gallery/gallery-img-01.webp" 
           alt="Featured Tattoo 3" 
           loading="lazy"
           decoding="async"
